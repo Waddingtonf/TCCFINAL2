@@ -1,0 +1,44 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Página de Perfil </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<style>
+    body {
+        background-image: url('/static/image/bg-site-v4.png');
+        width: 100%;
+    }
+</style>
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+        <body>
+             <div class="section is-large">
+                <h1 class="title has-text-white"> Seja Bem-Vindo,  <span class="has-text-warning">{{ user.username }}</span>! </h1>
+                <h2 class="subtitle has-text-white" > Você poderá usufruir do Estúdio, a partir daqui!</h2>
+                <a type="button" class="button is-warning has-text-black is-halfheight" href="{% url 'home' %}"> Acesse aqui a página </a>
+                <br> <br>
+                <a type="button" class="button is-white has-text-black is-hovered" href="/perfil/"> Alt Perfil </a>
+                <a type="button" class="button is-dark has-text-white is-hovered" href="/logouts/"> Logout </a>
+             </div>
+        </body>
+
+    {% else %}
+        <body>
+             <div class="hero-body">
+                <h1 class="title">
+                  Usuário Desconhecido :/
+                </h1>
+                <p class="subtitle">
+                  Você deve <strong>logar</strong> no site para poder usufruir dos benefícios!
+                </p>
+             </div>
+        </body>
+
+    {% endif %}
+{% endblock %}

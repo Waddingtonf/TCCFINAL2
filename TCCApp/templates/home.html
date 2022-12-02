@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> HomePage </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+{% block content %}
+
+    {% if request.user.is_autenticated%}
+        <body>
+            <section class="hero is-link is-fullheight">
+              <div class="hero-body">
+                <p class="title">
+                  Seja Bem-Vindo, {{ user.get_username }}!
+                </p>
+                <p class="subtitle">
+                  Você poderá usufruir do Estúdio, a partir daqui!
+                </p>
+              </div>
+            </section>
+        </body>
+    {% else %}
+        <body>
+            <section class="hero is-danger is-fullheight">
+              <div class="hero-body">
+                <p class="title">
+                  Usuário Desconhecido :/
+                </p>
+                <p class="subtitle">
+                  Você deve <strong>logar</strong> no site para poder usufruir dos benefícios!
+                </p>
+              </div>
+            </section>
+        </body>
+{% endblock %}

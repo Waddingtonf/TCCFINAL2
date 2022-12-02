@@ -1,0 +1,51 @@
+{% load static %}
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Faz Contato! - Mockup 3D Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/upload.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="https://imgur.com/VyXhQ3O.png" type="image/x-icon"/>
+</head>
+<body>
+    {% block body %}
+        <nav id="headercomp">
+            <ul id="headerprincipal">
+                <li id="logo_header" href='#'> <a href="/"> <img src="https://i.imgur.com/t3YMYaE.png"> </a> </li>
+                <li id="produtos"> <a href="/produtospage/"> Produtos </a></li>
+                <li id="servicos"> <a href="/servicos/"> Serviços </a></li>
+                {% if request.user.is_authenticated %}
+                    {% if imagem %}
+                        <li id="estampa" href="#"> <a href="/estampa/"> Monte Sua Estampa </a></li>
+                    {% else %}
+                        <li id="estampa" href="#"> <a href="/upload/"> Monte Sua Estampa </a></li>
+                    {% endif %}
+                {% else %}
+                <li id="estampa" href="#"> <a href="/login"> Monte Sua Estampa </a></li>
+                {% endif %}
+                <li id="contato" href="#"> <a href="https://wa.me/5584986282906"> Faz Contato! </a> </li>
+            </ul>
+        </nav>
+        <br>
+        <div id="linha"></div>
+        <main>
+            <section class='campo'>
+                <form method="POST" enctype="multipart/form-data">
+                    <div id="container">
+                        {% csrf_token %}
+                        {{ form.img }}
+                        {{ form.nome }}
+                        <input id="enviar" type="submit" value="Enviar">
+
+                        <br><br>
+                        <a id='myesta'href='/estampa'> Minhas Estampas </a>
+                    </div>
+                </form>
+            </section>
+
+        </main>
+</body>
+{% endblock %}
+</html>

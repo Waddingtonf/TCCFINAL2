@@ -1,0 +1,95 @@
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atualizar Perfil</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<style>
+    body {
+        background-image: url('/static/image/bg-site-v4.png');
+        width: 100%;
+    }
+</style>
+
+{% block body %}
+
+{% if request.user.is_authenticated %}
+<body>
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-half is-centered">
+                        <form name="form-perfil" id="formChanging" action="/dochanging/" method="post">
+                                {% if msg %}
+                                    <article class="message {{ class }}">
+                                         <div class="message-header">
+                                            <p> {{msg}} </p>
+                                            <a class="delete" aria-label="delete"></a>
+                                        </div>
+                                    </article>
+                                {% endif %}
+                                <br> <br>
+                                {% csrf_token %}
+                                  <div class="field is-centered">
+                                    <label class="label has-text-white">Senha Anterior:</label>
+                                    <p class="control has-icons-left">
+                                        <input class="input" type="password" name="confirmar-senha" id="confirmar-senha" placeholder="Senha">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </p>
+                                  </div>
+                                  <div class="field">
+                                    <label class="label has-text-white">Nova Senha:</label>
+                                    <p class="control has-icons-left">
+                                        <input class="input" type="password" name="senha" id="senha" placeholder="Senha">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </p>
+                                  </div>
+                                  <div class="field">
+                                    <label class="label has-text-white">Nome: {{ user.first_name }} </label>
+                                    <p class="control has-icons-left has-icons-right">
+                                      <input class="input" type="text" name="nome" id="nome" placeholder="Insira um Nome">
+                                      <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                      </span>
+                                        <span class="icon is-small is-right">
+                                        <i class="fas fa-check"></i>
+                                        </span>
+                                    </p>
+                                  </div>
+                                  <div class="field">
+                                    <label class="label has-text-white">Email: {{ user.email }} </label>
+                                    <p class="control has-icons-left has-icons-right">
+                                      <input class="input" type="text" name="email" id="email" placeholder="Atualize um Email">
+                                      <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                      </span>
+                                        <span class="icon is-small is-right">
+                                        <i class="fas fa-check"></i>
+                                        </span>
+                                    </p>
+                                  </div>
+                                <div class="field">
+                                    <p class="control">
+                                        <button type="submit" class="button is-link is-hovered"> Atualizar </button>
+                                        <a type="button" class="button is-danger is-hovered" href= "{% url 'home' %}" > Pagina Inicial </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+{% endif %}
+{% endblock %}
