@@ -94,7 +94,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'DE0Pz35nWPlQVQfvKe3I',
         'HOST': 'containers-us-west-133.railway.app',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'PORT': '7516',
     }
 }
 
