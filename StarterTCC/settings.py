@@ -90,11 +90,11 @@ DEFAULT_FROM_EMAIL = 'Studio3DMockup <noreply@studio3dmockup.com>'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',
-        'USER': 'root',
-        'PASSWORD': 'CYkpjpSAbT8n3wZvoXwU',
-        'HOST': 'containers-us-west-133.railway.app',   # Or an IP Address that your DB is hosted on
-        'PORT': '7516',
+        'NAME': 'tccfinal_bd',
+        'USER': 'uodditu',
+        'PASSWORD': '132489Ab',
+        'HOST': 'db4free.net',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
