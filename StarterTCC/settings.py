@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-a6dalfjw7&1s6qe$1=+8x0kt#k415w*n#7%(^n9v*0d$(9!l@*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'studiomockup3d.up.railway.app' ,'studio3dmockup.pythonanywhere.com', 'api.mediamodifier.com']
 
