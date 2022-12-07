@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a6dalfjw7&1s6qe$1=+8x0kt#k415w*n#7%(^n9v*0d$(9!l@*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'studio3dmockup.pythonanywhere.com', 'api.mediamodifier.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'studiomockup3d.up.railway.app' ,'studio3dmockup.pythonanywhere.com', 'api.mediamodifier.com']
 
 DJANGO_SETTINGS_MODULE= 'StarterTCC.settings'
 
@@ -90,10 +90,10 @@ DEFAULT_FROM_EMAIL = 'Studio3DMockup <noreply@studio3dmockup.com>'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',
-        'USER': 'root',
-        'PASSWORD': 'CYkpjpSAbT8n3wZvoXwU',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'NAME': 'tccfinal_bd',
+        'USER': 'uodditu',
+        'PASSWORD': '132489Ab',
+        'HOST': 'db4free.net',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
